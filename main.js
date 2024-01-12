@@ -1,8 +1,8 @@
 function calcularNota(){
     // pedir al usuario ingresar las notas 
-    var nota1 = prompt("Ingrese la primera nota:");
-    var nota2 = prompt("Ingrese la segunda nota:");
-    var nota3 = prompt("Ingrese la tercera nota:");
+    let nota1 = prompt("Ingrese la primera nota:");
+    let nota2 = prompt("Ingrese la segunda nota:");
+    let nota3 = prompt("Ingrese la tercera nota:");
 
     // conviertiendo nota 1 a numero
     nota1 = parseFloat(nota1);
@@ -27,7 +27,7 @@ function calcularNota(){
             alert("Por favor, ingrese un número válido para la tercera nota.");
         } else {
     // calcular el promedio de las notas
-        var promedio = (nota1 + nota2 + nota3) / 3;
+        let promedio = (nota1 + nota2 + nota3) / 3;
 
     // mostrar el resultado en un alert
         alert("El promedio de las notas es: " + promedio.toFixed(2));
