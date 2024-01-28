@@ -17,13 +17,13 @@ function verAlumnos(){
     //Lista de estudiantes
     
         const estudiantes = [
-        new Estudiante('Pedro', 20, [4, 6, 8]),
-        new Estudiante('María', 22, [5, 4, 7]),
-        new Estudiante('Carlos', 31, [3, 2, 7]),
-        new Estudiante('Matias', 24, [8, 5, 6]),
-        new Estudiante('Martin', 25, [6, 4, 7]),
-        new Estudiante('Camila', 19, [9, 9, 10]),
-        ];
+            new Estudiante('Pedro', 20, [4, 6, 8]),
+            new Estudiante('María', 22, [5, 4, 7]),
+            new Estudiante('Carlos', 31, [3, 2, 7]),
+            new Estudiante('Matias', 24, [8, 5, 6]),
+            new Estudiante('Martin', 25, [6, 4, 7]),
+            new Estudiante('Camila', 19, [9, 9, 10]),
+            ];
 
 
     // Mostrar la lista de nombres de estudiantes
@@ -50,4 +50,27 @@ function verAlumnos(){
         alert(`No se encontró ningún estudiante con el nombre "${nombreBuscado}".`);
         }
 
-}
+       
+        function filtrarEstudiantesPorPromedio(promedioMinimo) {
+        return estudiantes.filter(estudiante => estudiante.obtenerPromedio() >= promedioMinimo);
+        }
+
+        //Solicitar promedio para filtrar
+        const promedioMinimo = parseFloat(prompt('Ingrese el promedio mínimo para filtrar los estudiantes:'));
+        const estudiantesFiltrados = filtrarEstudiantesPorPromedio(promedioMinimo);
+        
+        // Mostrar el promedio o un mensaje si no se encuentra
+
+        if (estudiantesFiltrados.length > 0) {
+            const nombresDeEstudiantesFiltrados = estudiantesFiltrados.map(estudiante => estudiante.nombre).join(', ');
+            alert(`Estudiantes con promedio superior a ${promedioMinimo}:\n${nombresDeEstudiantesFiltrados}`);
+        } else {
+            alert(`No se encontraron estudiantes con un promedio superior a ${promedioMinimo}.`);
+        }
+        }
+        
+
+    
+        
+        
+
