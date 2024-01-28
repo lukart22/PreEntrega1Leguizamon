@@ -49,8 +49,8 @@ function verAlumnos(){
         } else {
         alert(`No se encontró ningún estudiante con el nombre "${nombreBuscado}".`);
         }
-
-       
+    // Filtrar estudiantes para devolver  solo los que tengan una calificación mayor al promedio 
+    
         function filtrarEstudiantesPorPromedio(promedioMinimo) {
         return estudiantes.filter(estudiante => estudiante.obtenerPromedio() >= promedioMinimo);
         }
