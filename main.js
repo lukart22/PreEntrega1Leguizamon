@@ -46,7 +46,7 @@ document.getElementById('alumno-form').addEventListener('submit', function(event
 
 function verAlumnos() {
     let alumnosContainer = document.getElementById('alumnos-container')
-    alumnosContainer.innerHTML = ''; // Aquí faltaba un punto y coma
+    alumnosContainer.innerHTML = ''; 
     for (let i = 0; i < estudiantes.length; i++) {
         let estudiante = estudiantes[i];
         let promedio = calcularPromedio(estudiante);
