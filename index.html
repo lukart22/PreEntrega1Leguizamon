@@ -10,24 +10,34 @@
 </head>
 
 <body>
+
     <div class="main-container">
         <div class="simulator-container">
             <h1>Simulador de Notas</h1>
-            <div class="sub">
-                <p>Sacamos el promedio de las notas que ingreses.</p>
+            <div class="sub" <p>Sacamos el promedio de las notas que ingreses.</p>
             </div>
-            <div class="input-containerr">
-                <button onclick="verAlumnos()">Para ver a los alumnos y sus notas toca acá</button>
+            <div class="input-container" <button onclick="verAlumnos()"></button>
+                <form id="alumno-form">
+                    <input type="hidden" id="alumno-id" value="0">
+                    <label for="alumno-nombre">Nombre y apellido:</label>
+                    <input type="text" id="alumno-nombre" required>
+                    <label for="nota1">Nota 1:</label>
+                    <input type="number" id="nota1" step="0.01" min="0" max="10" required>
+                    <label for="nota2">Nota 2:</label>
+                    <input type="number" id="nota2" step="0.01" min="0" max="10" required>
+                    <label for="nota3">Nota 3:</label>
+                    <input type="number" id="nota3" step="0.01" min="0" max="10" required>
+                    <button type="submit">Agregar alumno</button>
+                </form>
             </div>
-
-            <div class="input-containerr">
-                <button onclick="verPromedio()">Para filtrar una cantidad minima o maxima de promedios tocá acá</button>
+            <div class="input-container" <label for="promedio-input">Ingresa un numero para ver la cantidad de alumnos
+                superior al promedio</label>
+                <input type="number" id="promedio-input" step="0.01" min="0" max="10">
             </div>
-
+            <div id="alumnos-container"></div>
+            <div id="promedio-container"></div>
         </div>
     </div>
-
-
     <script src="./main.js"></script>
 </body>
 

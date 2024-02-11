@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:ital,wght@1,300&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');*{
     margin: 0;
     padding: 0;
 }
@@ -11,14 +10,18 @@ body {
     justify-content: center;
     min-height: 100vh;
     font-family: 'Anton', sans-serif;
-    font-family: 'Chakra Petch', sans-serif;
-    background-image: url(../logo/fondo.jpg);
+    font-family: 'Space Mono', sans-serif;
+    background-image: url(../logo/fondo.jpg), linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    background-attachment: fixed;
+    background-blend-mode: multiply;
     transition: all .3s ease;
+    font-size: 18px;
+    
     
 }
 
 .simulator-container {
-    background-color: rgb(249, 249, 249);
+    background-color: rgb(232, 232, 232);
     padding: 60px;
     border-radius: 8px;
     box-shadow: 0 0 820px rgba(255, 255, 255, 0.55);
@@ -28,9 +31,15 @@ body {
 .sub p{
     margin: 23px;
 }
+h1{
+    margin-bottom: 20px;
+}
 
 .input-container {
     margin-bottom: 20px;
+}
+#alumno-form{
+    margin-top: 30px;
 }
 
 label {
@@ -55,7 +64,7 @@ button {
     cursor: pointer;
     border-radius: 4px;
     font-family: 'Anton', sans-serif;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Space Mono', sans-serif;
 }
 
 button:hover {
