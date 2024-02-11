@@ -6,11 +6,16 @@ function Estudiante(nombre, edad, calificaciones) {
     this.obtenerPromedio = function () {
         let sumaCalificaciones = this.calificaciones.reduce((suma, calificacion) => suma + calificacion, 0);
         let promedio = sumaCalificaciones / this.calificaciones.length;
-        return parseFloat(promedio.toFixed(2));    
+        return parseFloat(promedio.toFixed(2));   
     }
 }
 
 let estudiantes = [];
+
+// cargar "estudiantes" desde el almacenamiento local
+if (localStorage.getItem('estudiantes')) {
+    estudiantes = JSON.parse(localStorage.getItem('estudiantes'));
+}
 
 document.getElementById('alumno-form').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -22,6 +27,9 @@ document.getElementById('alumno-form').addEventListener('submit', function (even
 
     let nuevoEstudiante = new Estudiante(nombre, 0, [nota1, nota2, nota3]);
     estudiantes.push(nuevoEstudiante);
+
+    // guarda "estudiantes" en el almacenamiento local
+    localStorage.setItem('estudiantes', JSON.stringify(estudiantes));
 
     document.getElementById('alumno-form').reset();
     verAlumnos();
@@ -36,6 +44,9 @@ function verAlumnos() {
         let alumnoHTML = `<p>Nombre: ${estudiante.nombre}, Promedio: ${promedio}</p>`;
         alumnosContainer.innerHTML += alumnoHTML;
     }
+
+    // guardar estudiantes en el almacenamiento local
+    localStorage.setItem('estudiantes', JSON.stringify(estudiantes));
 }
 
 function calcularPromedio(estudiante) {
