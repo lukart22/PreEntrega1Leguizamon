@@ -21,11 +21,6 @@ function verAlumnos() {
 
     let nombreEncontrado = nombresDeEstudiantes.includes(nombreBuscado);
 
-    if (estudianteEncontradoPorNombre) {
-        document.getElementById('alumnos-container').innerText += `\n\nEstudiante encontrado:\nNombre: ${estudianteEncontradoPorNombre.nombre}\nEdad: ${estudianteEncontradoPorNombre.edad}\nCalificaciones: ${estudianteEncontradoPorNombre.calificaciones.join(', ')}\nPromedio: ${estudianteEncontradoPorNombre.obtenerPromedio()}`;
-    } else {
-        document.getElementById('alumnos-container').innerText += `\nNo se encontró ningún estudiante con el nombre "${nombreBuscado}".`;
-    }
 }
 
 
