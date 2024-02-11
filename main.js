@@ -3,28 +3,16 @@ function Estudiante(nombre, edad, calificaciones) {
     this.edad = edad;
     this.calificaciones = calificaciones;
 
-    this.obtenerPromedio = function() {
+    this.obtenerPromedio = function () {
         let sumaCalificaciones = this.calificaciones.reduce((suma, calificacion) => suma + calificacion, 0);
         let promedio = sumaCalificaciones / this.calificaciones.length;
-        return parseFloat(promedio.toFixed(2)); 
+        return parseFloat(promedio.toFixed(2));    
     }
 }
 
-let estudiantes = []; 
+let estudiantes = [];
 
-function verAlumnos() {
-    let nombresDeEstudiantes = estudiantes.map(estudiante => estudiante.nombre).join(', ');
-    document.getElementById('alumnos-container').innerText = `Nombres de estudiantes: ${nombresDeEstudiantes}`;
-
-    let nombreBuscado = document.getElementById('alumno-nombre').value;
-    let estudianteEncontradoPorNombre = estudiantes.find(estudiante => estudiante.nombre === nombreBuscado);
-
-    let nombreEncontrado = nombresDeEstudiantes.includes(nombreBuscado);
-
-}
-
-
-document.getElementById('alumno-form').addEventListener('submit', function(event) {
+document.getElementById('alumno-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
     let nombre = document.getElementById('alumno-nombre').value;
@@ -40,8 +28,8 @@ document.getElementById('alumno-form').addEventListener('submit', function(event
 });
 
 function verAlumnos() {
-    let alumnosContainer = document.getElementById('alumnos-container')
-    alumnosContainer.innerHTML = ''; 
+    let alumnosContainer = document.getElementById('alumnos-container');
+    alumnosContainer.innerHTML = '';
     for (let i = 0; i < estudiantes.length; i++) {
         let estudiante = estudiantes[i];
         let promedio = calcularPromedio(estudiante);
@@ -58,7 +46,6 @@ function calcularPromedio(estudiante) {
 function verPromedio() {
     let promedioMinimo = parseFloat(document.getElementById('promedio-input').value);
     let estudiantesFiltrados = estudiantes.filter(estudiante => estudiante.obtenerPromedio() >= promedioMinimo);
-
 
     if (estudiantesFiltrados.length > 0) {
         let nombresDeEstudiantesFiltrados = estudiantesFiltrados.map(estudiante => estudiante.nombre).join(', ');
